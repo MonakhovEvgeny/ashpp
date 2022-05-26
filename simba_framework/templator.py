@@ -1,5 +1,4 @@
 from os.path import join
-
 from jinja2 import Template
 
 
