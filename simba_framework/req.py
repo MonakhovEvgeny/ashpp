@@ -64,7 +64,7 @@ class PostRequests:
             # декодируем данные
            
             data_str = data.decode(encoding='utf-8')
-            print(f'строка после декодирования - {data_str}')
+            # print(f'строка после декодирования - {data_str}')
             # собираем их в словарь
             result = self.parse_input_data(data_str)
        

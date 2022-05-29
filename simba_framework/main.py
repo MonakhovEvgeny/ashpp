@@ -35,11 +35,12 @@ class Framework:
         if method == 'POST':
             data = PostRequests().get_request_params(environ)
             request['data'] = Framework.decode_value(data)
-            print('----------------------------------------------------------')
-            # message = request['data']['your_enquiry'].decode(encoding='utf-8')
-            message = request['data']['your_enquiry']
-            with open('file_message.txt', 'a') as f:
-                print(f'{datetime.today(), message}', file=f)
+            
+            for i in request['data']:
+                if i == 'your_enquiry':
+                    message = request['data']['your_enquiry']
+                    with open('file_message.txt', 'a') as f:
+                        print(f'{datetime.today(), message}', file=f)
             print(f'Нам пришёл post-запрос: {Framework.decode_value(data)}')
         if method == 'GET':
             request_params = GetRequests().get_request_params(environ)

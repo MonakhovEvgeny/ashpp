@@ -1,6 +1,7 @@
 from datetime import date
 
-from views import Another_page, Contact, Examples, Index, Page
+from views import (Another_page, CategoryList, Contact, CopyCourse,
+                   CoursesList, CreateCategory, CreateCourse, Examples, Index)
 
 
 # front controller
@@ -18,7 +19,10 @@ routes = {
     '/': Index(),
     '/index/': Index(),
     '/contact/': Contact(),
-    '/page/': Page(),
-    '/another_page/': Another_page(),
-    '/examples/': Examples()
+    '/page/': CreateCategory(),
+    '/another_page/': CoursesList(),
+    '/examples/': Examples(),
+    '/create_course/': CreateCourse(),
+    '/category_list/': CategoryList(),
+    '/copy-course/': CopyCourse()
 }
